@@ -125,14 +125,14 @@ function Navbar() {
 
                         
                             {!authStatus && (
-                                <div className="flex flex-col space-y-5 mb-3">
+                                <div className="flex flex-col space-y-3 mb-3">
                                     <Link to={"/login"}>
-                                        <Button className="bg-[#14181d]  font-semibold rounded hover:bg-[#FD7014] hover:text-white hover:text-black border-slate-500 py-1 px-3">
+                                        <Button className="bg-[#14181d] w-full font-semibold rounded hover:bg-[#FD7014] hover:text-white border-slate-500 py-2 px-3">
                                             Login
                                         </Button>
                                     </Link>
                                     <Link to={"/signup"}>
-                                        <Button className=" bg-[#14181d] text-stone-950 font-semibold  rounded hover:bg-[#FD7014] hover:text-black py-1 px-3">
+                                        <Button className=" bg-[#14181d] w-full text-stone-950 font-semibold  rounded hover:bg-[#FD7014] hover:text-black py-2 px-3">
                                             Sign up
                                         </Button>
                                     </Link>
