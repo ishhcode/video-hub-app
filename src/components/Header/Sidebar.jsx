@@ -1,12 +1,15 @@
 import React from "react";
-import { RiHome6Line } from "react-icons/ri";
-import { BiLike } from "react-icons/bi";
-import { BiHistory } from "react-icons/bi";
-import { HiOutlineVideoCamera } from "react-icons/hi2";
-import { IoFolderOutline } from "react-icons/io5";
-import { TbUserCheck } from "react-icons/tb";
-import { CiSettings } from "react-icons/ci";
-import { MdOutlineContactSupport } from "react-icons/md";
+import {
+    BiHistory,
+    BiLike,
+    CiSettings,
+    HiOutlineVideoCamera,
+    IoFolderOutline,
+    MdOutlineContactSupport,
+    RiHome6Line,
+    TbUserCheck,
+} from "../icons";
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
     const sidebarTopItems = [
@@ -68,18 +71,22 @@ function Sidebar() {
         <>
             <div className="sm:block hidden">
                 <div className="text-white lg:w-56 md:w-44 w-16 sm:p-3 p-2 border-slate-600 border-r h-[93vh] flex flex-col justify-between">
-                    <div className="space-y-4 mt-5">
+                    <div className="flex flex-col gap-4 mt-5">
                         {sidebarTopItems.map((item) => (
-                            <Link
+                            <NavLink
                                 to={item.url}
                                 key={item.title}
-                                className="flex items-center gap-2 justify-center sm:justify-start rounded hover:bg-[#FD7014] cursor-pointer py-1 px-2 border border-slate-600"
+                                className={({ isActive }) =>
+                                    isActive ? "bg-[#FD7014] rounded" : ""
+                                }
                             >
-                                {item.icon}
-                                <span className="text-base hidden md:block">
-                                    {item.title}
-                                </span>
-                            </Link>
+                               <div className="flex items-center rounded gap-2 justify-center sm:justify-start hover:bg-[#FD7014] cursor-pointer  py-1 px-2 border border-slate-600">
+                                    {item.icon}
+                                    <span className="text-base hidden md:block">
+                                        {item.title}
+                                    </span>
+                                </div>
+                            </NavLink>
                         ))}
                     </div>
 
@@ -103,14 +110,20 @@ function Sidebar() {
             {/* for mobile sidebar is bottom bar*/}
             <div className="border-t-2 text-white h-16 sm:hidden p-1 w-full flex justify-around fixed bottom-0 bg-[#0E0F0F]">
                 {bottomBarItems.map((item) => (
-                    <Link
+                    <NavLink
                         to={item.url}
                         key={item.title}
-                        className="flex flex-col items-center gap-1 cursor-pointer p-1"
+                        className={({ isActive }) =>
+                                    isActive ? "text-[#FD7014]" : ""
+                                }
                     >
-                        {item.icon}
-                        <span className="text-sm">{item.title}</span>
-                    </Link>
+                       <div className="flex flex-col items-center gap-1 cursor-pointer p-1">
+                                    {item.icon}
+                                    <span className="text-base hidden md:block">
+                                        {item.title}
+                                    </span>
+                                </div>
+                            </NavLink>
                 ))}
             </div>
         </>
