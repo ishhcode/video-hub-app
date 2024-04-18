@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Channel, Container } from "../components/index";
+import { Channel} from "../../components/index";
 import {useDispatch, useSelector} from "react-redux"
-import { userChannelProfile } from "../store/userSlice";
+import { userChannelProfile } from "../../store/userSlice";
 
 function MyChannel() {
     const dispatch = useDispatch();
@@ -17,14 +17,15 @@ function MyChannel() {
     return (
         <>
 
-            <Channel 
+            <Channel
                 username={channel?.username}
                 coverImage={profile?.coverImage.url}
                 avatar={profile?.avatar.url}
                 subscribedCount={profile?.channelsSubscribedToCount || 0}
                 fullName={profile?.fullName}
                 subscribersCount={profile?.subscribersCount || 0}
-            />
+            >
+            </Channel>
         </>
     );
 }
