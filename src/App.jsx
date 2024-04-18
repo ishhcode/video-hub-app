@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage.jsx"
 import Login from './components/Login.jsx'
 import { Toaster } from "react-hot-toast";
 import { useDispatch} from "react-redux";
-import { getCurrentUser } from "./store/AuthSlice";
+import { getCurrentUser } from "./store/Slices/authSlice.js";
 import MyChannel from "./pages/MyChannel/MyChannel.jsx";
 import MyChannelVideos from "./pages/MyChannel/MyChannelVideos.jsx";
 function App() {
