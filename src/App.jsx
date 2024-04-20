@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes } from 'react-router-dom';
 import Layout from "./Layout";
 import HomePage from "./pages/HomePage.jsx"
-import Login from './components/Login.jsx'
+import {Login, SignUp} from "./components/index";
 import { Toaster } from "react-hot-toast";
 import { useDispatch} from "react-redux";
 import { getCurrentUser } from "./store/Slices/authSlice.js";
@@ -27,6 +27,7 @@ function App() {
                     </Route>
                 </Route>
                 <Route path="/login" element={<Login />}/>
+                <Route path="/signup" element={<SignUp />}/>
             </Routes>   
             <Toaster
                 position="top-right"
