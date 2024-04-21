@@ -18,7 +18,7 @@ export const createAccount = createAsyncThunk("register",
         formData.append("fullName", data.fullName);
     
         try {
-            const response = await axiosInstance.post("/users/register", formData,);
+            const response = await axiosInstance.post("/users/register", formData);
             console.log(response.data);
             toast.success("Registered successfully!!!");
         return response.data;
@@ -126,6 +126,7 @@ const authSlice = createSlice({
             state.userData = action.payload.data;
         });
         builder.addCase(getCurrentUser.rejected, (state) => {
+            state.loading = false;
             state.status = false;
             state.userData = null;
 

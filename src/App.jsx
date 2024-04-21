@@ -6,8 +6,8 @@ import {Login, SignUp} from "./components/index";
 import { Toaster } from "react-hot-toast";
 import { useDispatch} from "react-redux";
 import { getCurrentUser } from "./store/Slices/authSlice.js";
-import MyChannel from "./pages/MyChannel/MyChannel.jsx";
-import MyChannelVideos from "./pages/MyChannel/MyChannelVideos.jsx";
+import Channel from "./pages/Channel/Channel";
+import ChannelVideos from "./pages/Channel/ChannelVideos";
 import History from "./pages/History";
 function App() {
     const dispatch = useDispatch();
@@ -20,8 +20,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route path="" element={<HomePage />}/>
-                    <Route path="/my-content" element={<MyChannel />}>
-                        <Route path="videos" element={<MyChannelVideos />}/>
+                    <Route path="/channel/:username" element={<Channel />}>
+                        <Route path="videos" element={<ChannelVideos />}/>
                         <Route path="playlists" element={""}/>
                         <Route path="tweets" element={""}/>
                         <Route path="subscribed" element={""}/>
