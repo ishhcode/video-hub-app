@@ -19,7 +19,7 @@ export const createAccount = createAsyncThunk("register",
     
         try {
             const response = await axiosInstance.post("/users/register", formData);
-            console.log(response.data);
+            //console.log(response.data);
             toast.success("Registered successfully!!!");
         return response.data;
     } catch (error) {
@@ -31,7 +31,7 @@ export const createAccount = createAsyncThunk("register",
 export const userLogin = createAsyncThunk("login", async (data) => {
     try {
         const response = await axiosInstance.post("/users/login", data);
-        console.log(response.data);
+        //console.log(response.data);
         return response.data.data.user;
     } catch (error) {
         toast.error(error?.response?.data?.error);
