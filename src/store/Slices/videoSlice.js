@@ -42,7 +42,7 @@ export const publishAvideo = createAsyncThunk("publishAvideo", async(data) => {
     formData.append("thumbnail", data.thumbnail[0]);
 
     try {
-        const response = await axiosInstance.post('/video', formData);
+        const response = await axiosInstance.post("/video", formData);
         console.log(response.data.data);
         toast.success(response?.data?.message);
         return response.data.data;
@@ -52,15 +52,17 @@ export const publishAvideo = createAsyncThunk("publishAvideo", async(data) => {
     }
 });
 
-export const updateAVideo = createAsyncThunk("updateAVideo", async(data) => {
+export const updateAVideo = createAsyncThunk("updateAVideo", async (data) => {
     const formData = new FormData();
     formData.append("title", data.title);
     formData.append("description", data.description);
     formData.append("thumbnail", data.thumbnail[0]);
 
     try {
-        const response = await axiosInstance.patch(`/video/v/${data.videoId}`, formData);
-        console.log(response.data.data);
+        const response = await axiosInstance.patch(
+            `/video/v/${data.videoId}`,
+            formData
+        );
         toast.success(response?.data?.message);
         return response.data.data;
     } catch (error) {
@@ -69,40 +71,50 @@ export const updateAVideo = createAsyncThunk("updateAVideo", async(data) => {
     }
 });
 
-export const deleteAVideo = createAsyncThunk("deleteAVideo", async(videoId) => {
-    try {
-        const response = await axiosInstance.delete(`/video/v/${videoId}`);
-        console.log(response.data.data);
-        toast.success(response?.data?.message);
-        return response.data.data;
-    } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error;
+export const deleteAVideo = createAsyncThunk(
+    "deleteAVideo",
+    async (videoId) => {
+        try {
+            const response = await axiosInstance.delete(`/video/v/${videoId}`);
+            toast.success(response?.data?.message);
+            return response.data.data;
+        } catch (error) {
+            toast.error(error?.response?.data?.error);
+            throw error;
+        }
     }
-});
+);
 
-export const getVideoById = createAsyncThunk("getVideoById", async(videoId) => {
-    try {
-        const response = await axiosInstance.get(`/video/v/${videoId}`);
-        console.log(response.data.data);
-        return response.data.data;
-    } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error;
+export const getVideoById = createAsyncThunk(
+    "getVideoById",
+    async ({ videoId, userId }) => {
+        try {
+            const response = await axiosInstance.post(`/video/v/${videoId}`, {
+                userId,
+            });
+            return response.data.data;
+        } catch (error) {
+            toast.error(error?.response?.data?.error);
+            throw error;
+        }
     }
-});
+);
 
-export const togglePublishStatus = createAsyncThunk("togglePublishStatus", async(videoId) => {
-    try {
-        const response = await axiosInstance.get(`/video/toggle/publish/${videoId}`);
-        console.log(response.data.data.isPublished);
-        toast.success(response.data.data.message);
-        return response.data.data.isPublished;
-    } catch (error) {
-        toast.error(error?.response?.data?.error);
-        throw error;
+export const togglePublishStatus = createAsyncThunk(
+    "togglePublishStatus",
+    async (videoId) => {
+        try {
+            const response = await axiosInstance.get(
+                `/video/toggle/publish/${videoId}`
+            );
+            toast.success(response.data.data.message);
+            return response.data.data.isPublished;
+        } catch (error) {
+            toast.error(error?.response?.data?.error);
+            throw error;
+        }
     }
-});
+);
 
 const videoSlice = createSlice({
     name: "video",
