@@ -9,7 +9,6 @@ function VideoList({
     views=0,
     avatar,
     channelName,
-    
     createdAt,
     channelId,
 }) {
