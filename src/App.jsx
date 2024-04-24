@@ -12,6 +12,9 @@ import History from "./pages/History";
 import ChannelTweets from "./pages/Channel/ChannelTweets";
 import LikedVideos from "./pages/LikedVideos";
 import VideoDetail from "./pages/VideoDetail";
+import ChannelSubscribers from "./pages/Channel/ChannelSubscribers.jsx";
+import MySubscriptions from "./pages/MySubscriptions.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 function App() {
     const dispatch = useDispatch();
 
@@ -36,6 +39,7 @@ function App() {
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<SignUp />}/>
                 <Route path="/watch/:videoId" element={<VideoDetail />}/>
+                <Route path="/collections" element={<AdminDashboard />}/>
             </Routes>   
             <Toaster
                 position="top-right"
