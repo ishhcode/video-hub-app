@@ -1,6 +1,6 @@
 import Button from "./Button";
 import Container from "./Container";
-import Input from "./Input";
+
 import Login from "./Login";
 import Navbar from "./Header/Navbar";
 import Search from "./Header/Search";
@@ -12,5 +12,13 @@ import SignUp from "./Signup";
 import TweetAndComment from "./TweetAndComment";
 import Video from "./Video";
 import CommentList from "./CommentsList";
+import ChannelNavigate from "./channel/ChannelNavigate"
+import Edit from "./Edit";
+import DeleteConfirmation from "./DeleteConfirmation";
+import Like from "./Like";
+import Description from "./Description";
+import TweetList from './TweeList';
+import Input from './Input';
 
-export { Button, Container, Input, Login, Navbar, Search, Sidebar, Logo, VideoList, ChannelHeader,SignUp , TweetAndComment, Video, CommentList};
+
+export { Button, Container, Input, Login, Navbar, Search, Sidebar, Logo, VideoList, ChannelHeader, ChannelNavigate ,SignUp , TweetAndComment, Video, CommentList, Edit, DeleteConfirmation, Like, Description, TweetList};

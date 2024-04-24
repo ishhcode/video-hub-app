@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { timeAgo } from "../helpers/timeAgo";
-import { useSelector } from "react-redux";
-import Like from "./Like";
-import { HiOutlineDotsVertical } from "../components/icons";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { Like, DeleteConfirmation, Edit } from "./index";
+import { HiOutlineDotsVertical } from "./icons";
 import { deleteAComment, editAComment } from "../store/Slices/commentSlice";
-import DeleteConfirmation from "./DeleteConfirmation";
-import EditComment from "./EditComment";
+
 
 function CommentsList({ avatar, username, createdAt, content, commentId, isLiked, likesCount }) {
     const avatar2 = useSelector((state) => state.auth?.userData?.avatar.url);
@@ -17,14 +15,16 @@ function CommentsList({ avatar, username, createdAt, content, commentId, isLiked
         editing: false,
         editedContent: content,
         isOpen: false,
-        deleteConfirm: false,
+        delete: false,
     });
 
-    const handleEditComment = () => {
-        dispatch(editAComment({ commentId, content: editState.editedContent }));
+    const handleEditComment = (editedContent) => {
+        console.log(editedContent);
+        dispatch(editAComment({ commentId, content: editedContent }));
         setEditState((prevState) => ({
             ...prevState,
             editing: false,
+            editedContent,
             isOpen: false,
             delete: false,
         }));
@@ -72,29 +72,34 @@ function CommentsList({ avatar, username, createdAt, content, commentId, isLiked
                                     <div className="border bg-[#222222] text-lg border-slate-600 absolute text-center right-2 rounded-xl">
                                         <ul>
                                         <li
-                                            className="hover:opacity-50 px-5 cursor-pointer border-b border-slate-600"
-                                            onClick={() =>
-                                                setEditState((prevState) => ({
-                                                    ...prevState,
-                                                    editing: !prevState.editing,
-                                                    isOpen: false,
-                                                }))
-                                            }
-                                        >
-                                            Edit
-                                        </li>
-                                        <li
-                                            className="px-5 hover:opacity-50 cursor-pointer"
-                                            onClick={() =>
-                                                setEditState((prevState) => ({
-                                                    ...prevState,
-                                                    delete: true,
-                                                    isOpen: false
-                                                }))
-                                            }
-                                        >
-                                            Delete
-                                        </li>
+                                                className="hover:opacity-50 px-5 cursor-pointer border-b border-slate-600"
+                                                onClick={() =>
+                                                    setEditState(
+                                                        (prevState) => ({
+                                                            ...prevState,
+                                                            editing:
+                                                                !prevState.editing,
+                                                            isOpen: false,
+                                                        })
+                                                    )
+                                                }
+                                            >
+                                                Edit
+                                            </li>
+                                            <li
+                                                className="px-5 hover:opacity-50 cursor-pointer"
+                                                onClick={() =>
+                                                    setEditState(
+                                                        (prevState) => ({
+                                                            ...prevState,
+                                                            delete: true,
+                                                            isOpen: false,
+                                                        })
+                                                    )
+                                                }
+                                            >
+                                                Delete
+                                            </li>
                                         </ul>
                                     </div>
                                 )}
@@ -120,8 +125,8 @@ function CommentsList({ avatar, username, createdAt, content, commentId, isLiked
 
                     {/* edit comment */}
                     {editState.editing ? (
-                        <EditComment
-                            initialContent={content}
+                        <Edit
+                            initialContent={editState.editedContent}
                             onCancel={() =>
                                 setEditState((prevState) => ({
                                     ...prevState,

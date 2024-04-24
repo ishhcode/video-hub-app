@@ -10,8 +10,8 @@ const initialState = {
 
 export const createTweet = createAsyncThunk("createTweet", async (content) => {
     try {
-        const response = await axiosInstance.post("/tweet", content);
-        toast.success(response.data?.message);
+        const response = await axiosInstance.post("/tweet", {content});
+        toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
         toast.error(error?.response?.data?.error);
@@ -39,8 +39,9 @@ export const editTweet = createAsyncThunk(
 export const deleteTweet = createAsyncThunk("deleteTweet", async (tweetId) => {
     try {
         const response = await axiosInstance.delete(`/tweet/${tweetId}`);
+        toast.success(response.data.message);
+        return response.data.data.tweetId;
         
-        return response.data.data;
     } catch (error) {
         toast.error(error?.response?.data?.error);
         throw error;
@@ -75,6 +76,9 @@ const tweetSlice = createSlice({
         });
         builder.addCase(createTweet.fulfilled, (state, action) => {
             state.tweets.unshift(action.payload);
+        });
+        builder.addCase(deleteTweet.fulfilled, (state, action) => {
+            state.tweets = state.tweets.filter((tweet) => tweet._id !== action.payload);
         })
     },
 });

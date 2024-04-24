@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserTweets } from "../../store/Slices/tweetSlice";
-import TweetList from "../../components/tweeList";
-import { TweetAndComment } from "../../components";
+import { TweetAndComment, TweetList } from "../../components";
+
+
+
 
 
 
