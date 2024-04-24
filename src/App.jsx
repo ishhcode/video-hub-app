@@ -27,10 +27,11 @@ function App() {
                         <Route path="videos" element={<ChannelVideos />}/>
                         <Route path="playlists" element={""}/>
                         <Route path="tweets" element={<ChannelTweets />}/>
-                        <Route path="subscribed" element={""}/>
+                        <Route path="subscribed" element={<ChannelSubscribers />}/>
                     </Route>
                     <Route path="/history" element={<History />}/>
                     <Route path="/liked-videos" element={<LikedVideos />}/>
+                    <Route path="/subscriptions" element={<MySubscriptions />}/>
                 </Route>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<SignUp />}/>

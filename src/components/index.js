@@ -20,6 +20,7 @@ import Description from "./Description";
 import TweetList from './TweeList';
 import Input from './Input';
 import Avatar from './Avatar';
+import NoVideosFound from './NoVideosFound';
 
 
-export { Button, Container, Input, Login, Navbar, Search, Sidebar, Logo, VideoList, ChannelHeader, ChannelNavigate ,SignUp , TweetAndComment, Video, CommentList, Edit, DeleteConfirmation, Like, Description, TweetList, Avatar};
+export { Button, Container, Input, Login, Navbar, Search, Sidebar, Logo, VideoList, ChannelHeader, ChannelNavigate ,SignUp , TweetAndComment, Video, CommentList, Edit, DeleteConfirmation, Like, Description, TweetList, Avatar, NoVideosFound};
