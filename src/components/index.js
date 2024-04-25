@@ -21,6 +21,31 @@ import TweetList from './TweetList';
 import Input from './Input';
 import Avatar from './Avatar';
 import NoVideosFound from './NoVideosFound';
+import Input2 from './Input2';
+import Spinner from './Spinner';
 
 
-export { Button, Container, Input, Login, Navbar, Search, Sidebar, Logo, VideoList, ChannelHeader, ChannelNavigate ,SignUp , TweetAndComment, Video, CommentList, Edit, DeleteConfirmation, Like, Description, TweetList, Avatar, NoVideosFound};
+export { Button, 
+    Container, 
+    Input, 
+    Login,
+     Navbar, 
+     Search, 
+     Sidebar,
+      Logo, 
+      VideoList, 
+      ChannelHeader,
+     ChannelNavigate ,
+     SignUp , 
+     TweetAndComment, 
+     Video, 
+     CommentList, 
+     Edit, 
+     DeleteConfirmation, 
+     Like, 
+     Description, 
+     TweetList,
+      Avatar, 
+      NoVideosFound, 
+    Input2,
+    Spinner};
