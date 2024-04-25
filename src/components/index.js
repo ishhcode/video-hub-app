@@ -17,7 +17,7 @@ import Edit from "./Edit";
 import DeleteConfirmation from "./DeleteConfirmation";
 import Like from "./Like";
 import Description from "./Description";
-import TweetList from './TweeList';
+import TweetList from './TweetList';
 import Input from './Input';
 import Avatar from './Avatar';
 import NoVideosFound from './NoVideosFound';
