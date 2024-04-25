@@ -1,6 +1,5 @@
 import Button from "./Button";
 import Container from "./Container";
-
 import Login from "./Login";
 import Navbar from "./Header/Navbar";
 import Search from "./Header/Search";
@@ -23,7 +22,9 @@ import Avatar from './Avatar';
 import NoVideosFound from './NoVideosFound';
 import Input2 from './Input2';
 import Spinner from './Spinner';
-
+import UploadVideo from './UploadVideo';
+import UploadingVideo from "./UploadingVideo";
+import TogglePublish from "./TogglePublish";
 
 export { Button, 
     Container, 
@@ -48,4 +49,8 @@ export { Button,
       Avatar, 
       NoVideosFound, 
     Input2,
-    Spinner};
+    Spinner,
+    UploadVideo,
+    UploadingVideo,
+    TogglePublish
+};
