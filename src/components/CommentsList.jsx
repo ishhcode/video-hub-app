@@ -109,18 +109,17 @@ function CommentsList({ avatar, username, createdAt, content, commentId, isLiked
 
                     {/* Delete Confirm popup */}
                     {editState.delete && (
-                        <div className="absolute right-[20%] top-[50%] z-50">
-                            <DeleteConfirmation
-                                onCancel={() =>
-                                    setEditState((prevState) => ({
-                                        ...prevState,
-                                        delete: false,
-                                        isOpen: false
-                                    }))
-                                }
-                                onDelete={handleDeleteComment}
-                            />
-                        </div>
+                        <DeleteConfirmation
+                            onCancel={() =>
+                                setEditState((prevState) => ({
+                                    ...prevState,
+                                    delete: false,
+                                    isOpen: false,
+                                }))
+                            }
+                            onDelete={handleDeleteComment}
+                            comment={true}
+                        />
                     )}
 
                     {/* edit comment */}
