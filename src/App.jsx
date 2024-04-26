@@ -16,6 +16,8 @@ import ChannelSubscribers from "./pages/Channel/ChannelSubscribers.jsx";
 import MySubscriptions from "./pages/MySubscriptions.jsx";
 import AdminDashboard from "./pages/AdminDashboard.jsx";
 import EditChannel from "./pages/EditChannel";
+import EditPersonalInfo from "./components/EditPersonalInfo";
+import ChangePassword from "./components/ChangePassword";
 function App() {
     const dispatch = useDispatch();
 
@@ -36,7 +38,10 @@ function App() {
                     <Route path="/history" element={<History />}/>
                     <Route path="/liked-videos" element={<LikedVideos />}/>
                     <Route path="/subscriptions" element={<MySubscriptions />}/>
-                    <Route path="/edit" element={<EditChannel />}/>
+                    <Route path="/edit" element={<EditChannel />}> 
+                        <Route path="personalInfo" element={<EditPersonalInfo /> } />    
+                        <Route path="password" element={<ChangePassword />} />    
+                    </Route>
                 </Route>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<SignUp />}/>
