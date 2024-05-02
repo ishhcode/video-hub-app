@@ -15,7 +15,8 @@ import {
     MySubscriptions,
     AdminDashboard,
     EditChannel,
-    HomePage
+    HomePage,
+    SearchVideos
 } from "./pages";
 import {EditPersonalInfo, ChangePassword, Layout} from "./components";
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route path="" element={<HomePage />}/>
+                    <Route path="/search/:query" element={<SearchVideos />}/>
                     <Route path="/channel/:username" element={<Channel />}>
                         <Route path="videos" element={<ChannelVideos />}/>
                         <Route path="playlists" element={""}/>
