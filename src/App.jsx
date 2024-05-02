@@ -18,6 +18,7 @@ import {
     HomePage,
     SearchVideos,
     TermsAndConditions,
+    ChannelPlaylist,
 } from "./pages";
 import {EditPersonalInfo, ChangePassword, Layout} from "./components";
 function App() {
@@ -67,7 +68,11 @@ function App() {
                         />
                         <Route
                             path="playlists"
-                            element={""}
+                            element={
+                                <AuthLayout authentication>
+                                    <ChannelPlaylist />
+                                </AuthLayout>
+                            }
                         />
                         <Route
                             path="tweets"

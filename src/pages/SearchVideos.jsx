@@ -26,6 +26,7 @@ function SearchVideos() {
                 sortType,
             })
         );
+        setFilterOpen(false);
         return () => dispatch(makeVideosNull());
     }, [dispatch, query, searchParams]);
 
