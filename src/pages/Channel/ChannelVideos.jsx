@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { NoVideosFound, VideoList } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllVideos } from "../../store/Slices/videoSlice";
+import { getAllVideos, makeVideosNull } from "../../store/Slices/videoSlice";
 
 
 function ChannelVideos() {
@@ -11,6 +11,7 @@ function ChannelVideos() {
 
     useEffect(() => {
         dispatch(getAllVideos({ userId }));
+        return () => dispatch(makeVideosNull());
     }, [dispatch, userId]);
 
     if (videos?.length == 0) {

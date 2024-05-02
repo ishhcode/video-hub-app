@@ -35,6 +35,8 @@ import Layout from "../Layout";
 import EditAvatar from "./EditAvatar";
 import AuthLayout from "./AuthLayout";
 import LoginPopup from './LoginPopup';
+import InfiniteScroll from './InfiniteScroll';
+
 
 export { Button, 
     Container, 
@@ -73,4 +75,5 @@ export { Button,
     EditAvatar,
     LoginPopup,
     AuthLayout,
+    InfiniteScroll,
 };
