@@ -33,6 +33,8 @@ import EditPersonalInfo from "./EditPersonalInfo";
 import ChangePassword from "./ChangePassword";
 import Layout from "../Layout";
 import EditAvatar from "./EditAvatar";
+import AuthLayout from "./AuthLayout";
+import LoginPopup from './LoginPopup';
 
 export { Button, 
     Container, 
@@ -69,4 +71,6 @@ export { Button,
     EditPersonalInfo,
     Layout,
     EditAvatar,
+    LoginPopup,
+    AuthLayout,
 };
