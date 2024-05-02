@@ -9,11 +9,13 @@ import {
     Description,
     Spinner,
     InfiniteScroll,
+    Navbar,
 } from "../components";
 import {
     cleanUpComments,
     getVideoComments,
 } from "../store/Slices/commentSlice";
+
 
 function VideoDetail() {
     const dispatch = useDispatch();
@@ -41,6 +43,7 @@ function VideoDetail() {
 
     return (
         <>
+        <Navbar />
             <Video
                 src={video?.videoFile?.url}
                 poster={video?.thumbnail?.url}
