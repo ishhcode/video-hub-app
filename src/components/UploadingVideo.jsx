@@ -49,7 +49,7 @@ function UploadingVideo({
                         <div className="mr-2">
                             <PiFilmReelFill
                                 size={25}
-                                className="text-purple-500"
+                                className="text-[#FD7014]"
                             />
                         </div>
                         <div className="">
@@ -63,7 +63,7 @@ function UploadingVideo({
                                         <span className="text-xs flex items-center">
                                             <TiTick
                                                 size={25}
-                                                className="text-purple-500"
+                                                className="text-[#FD7014]"
                                             />
                                             Uploaded Successfully
                                         </span>
@@ -87,7 +87,7 @@ function UploadingVideo({
                             Cancel
                         </Button>
                         <Button
-                            className="flex-1 bg-purple-500 p-2"
+                            className="flex-1 bg-[#FD7014] p-2"
                             textColor="text-black"
                             onClick={handleCancelAndFinish}
                         >

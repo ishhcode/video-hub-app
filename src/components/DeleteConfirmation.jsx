@@ -66,7 +66,7 @@ function DeleteConfirmation({ onCancel, onDelete,comment, tweet,video }) {
                                 Cancel
                             </Button>
                             <Button
-                                className="flex-1 bg-purple-500 p-2 font-bold"
+                                className="flex-1 bg-[#FD7014] p-2 font-bold"
                                 textColor="text-black"
                                 type="submit"
                             >

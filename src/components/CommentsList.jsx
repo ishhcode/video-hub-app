@@ -7,8 +7,8 @@ import { deleteAComment, editAComment } from "../store/Slices/commentSlice";
 
 
 function CommentsList({ avatar, username, createdAt, content, commentId, isLiked, likesCount }) {
-    const avatar2 = useSelector((state) => state.auth?.userData?.avatar.url);
-    const authUsername = useSelector((state) => state.auth?.userData?.username);
+    const avatar2 = useSelector((state) => state.auth?.userData?.data?.avatar.url);
+    const authUsername = useSelector((state) => state.auth?.userData?.data?.username);
     const dispatch = useDispatch();
 
     const [editState, setEditState] = useState({

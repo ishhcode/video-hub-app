@@ -9,7 +9,7 @@ function MySubscriptions() {
     const subscriptions = useSelector(
         (state) => state.subscription?.mySubscriptions
     );
-    const subscriberId = useSelector((state) => state.auth?.userData?._id);
+    const subscriberId = useSelector((state) => state.auth?.userData?.data?._id);
     useEffect(() => {
         if (subscriptions) {
             dispatch(getSubscribedChannels(subscriberId));

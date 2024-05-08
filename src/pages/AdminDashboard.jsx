@@ -16,7 +16,7 @@ import { getChannelStats, getChannelVideos } from "../store/Slices/dashboardSlic
 import { deleteAVideo } from "../store/Slices/videoSlice";
 
 function AdminDashboard() {
-    const username = useSelector((state) => state.auth.userData?.username);
+    const username = useSelector((state) => state.auth.userData?.data?.username);
     const dashboard = useSelector((state) => state.dashboard.channelStats);
     const videos = useSelector((state) => state.dashboard.channelVideos);
     const uploaded = useSelector((state) => state.video.uploaded);
@@ -100,7 +100,7 @@ function AdminDashboard() {
  <StatsSection dashboard={dashboard} />
                      {/* Table for managing channel videos */}
                      <VideoTable
-                        videos={videos}
+                        videos={videos.allVideos}
                         setPopUp={setPopUp}
                         setVideoDetails={setVideoDetails}
                     />
