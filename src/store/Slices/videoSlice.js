@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInstance from "../../helpers/axiosInstance";
 import toast from "react-hot-toast";
-import { BASE_URL } from "../../constants";
+
 
 const initialState = {
     loading: false,
@@ -19,7 +19,7 @@ export const getAllVideos = createAsyncThunk(
     "getAllVideos",
     async ({ userId, sortBy, sortType, query, page, limit }) => {
         try {
-            const url = new URL(`${BASE_URL}/video`);
+            const url = new URL(`${import.meta.env.VITE_BASE_URL}/video`);
 
             if (userId) url.searchParams.set("userId", userId);
             if (query) url.searchParams.set("query", query);

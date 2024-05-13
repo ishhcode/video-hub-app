@@ -1,1 +1,0 @@
-export const BASE_URL = "https://video-streaming-app-6xa8.onrender.com";
