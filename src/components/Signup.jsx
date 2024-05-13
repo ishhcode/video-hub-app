@@ -182,7 +182,7 @@ function SignUp() {
                             Already have an account?{" "}
                             <Link
                                 to={"/login"}
-                                className="text-purple-600 cursor-pointer hover:opacity-70"
+                                className="text-[#FD7014] cursor-pointer hover:opacity-70"
                             >
                                 Login
                             </Link>

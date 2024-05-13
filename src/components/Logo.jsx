@@ -10,7 +10,7 @@ function Logo({ size = "30" }) {
                         size={35}
                         color="#FD7014"
                     />
-                <span className="font-bold text-white">YOUTUBE</span>
+                <span className="font-bold text-white">VIDEO HUB</span>
             </Link>
         </>
     );

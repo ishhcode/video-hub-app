@@ -74,7 +74,7 @@ function VideoDetail() {
                 fetchMore={fetchMoreComments}
                 hasNextPage={hasNextPage}
             >
-                <div className="w-full sm:max-w-4xl">
+                <div className="w-full">
                     {comments?.map((comment) => (
                         <CommentList
                             key={comment?._id}

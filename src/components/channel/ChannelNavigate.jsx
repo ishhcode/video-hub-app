@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
                             to={`/edit/personalInfo`}
                             className={({ isActive }) =>
                                 isActive
-                                    ? "bg-white text-purple-600 border-b-2 border-purple-600"
+                                    ? "bg-white text-[#FD7014] border-b-2 border-[#FD7014] rounded-t-md px-2"
                                     : ""
                             }
                         >
@@ -21,7 +21,7 @@ import { NavLink } from "react-router-dom";
                             to={`/edit/password`}
                             className={({ isActive }) =>
                                 isActive
-                                    ? "bg-white text-purple-600 border-b-2 border-purple-600"
+                                    ? "bg-white text-[#FD7014] border-b-2 border-[#FD7014]rounded-t-md px-2"
                                     : ""
                             }
                         >
@@ -39,7 +39,7 @@ import { NavLink } from "react-router-dom";
                     to={`/channel/${username}/videos`}
                     className={({ isActive }) =>
                         isActive
-                            ? "bg-white text-purple-600 border-b-2 border-purple-600"
+                            ? "bg-white text-[#FD7014] border-b-2 border-[#FD7014] rounded-t-md px-2"
                             : ""
                     }
                 >
@@ -49,7 +49,7 @@ import { NavLink } from "react-router-dom";
                     to={`/channel/${username}/playlists`}
                     className={({ isActive }) =>
                         isActive
-                            ? "bg-white text-purple-600 border-b-2 border-purple-600"
+                            ? "bg-white text-[#FD7014] border-b-2 border-[#FD7014] rounded-t-md px-2"
                             : ""
                     }
                 >
@@ -59,7 +59,7 @@ import { NavLink } from "react-router-dom";
                     to={`/channel/${username}/tweets`}
                     className={({ isActive }) =>
                         isActive
-                            ? "bg-white text-purple-600 border-b-2 border-purple-600"
+                            ? "bg-white text-[#FD7014] border-b-2 border-[#FD7014] rounded-t-md px-2"
                             : ""
                     }
                 >
@@ -69,7 +69,7 @@ import { NavLink } from "react-router-dom";
                     to={`/channel/${username}/subscribed`}
                     className={({ isActive }) =>
                         isActive
-                            ? "bg-white text-purple-600 border-b-2 border-purple-600"
+                            ? "bg-white text-[#FD7014] border-b-2 border-[#FD7014] rounded-t-md px-2"
                             : ""
                     }
                 >
